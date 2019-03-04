@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '动画示例',
-      home: TestOpacity(),
+      home: FirstPage(),
     );
   }
 }
@@ -46,6 +46,51 @@ class _TestOpacityState extends State<TestOpacity> {
           });
         },
         child: Icon(Icons.flip),
+      ),
+    );
+  }
+}
+
+//Hero页面切换
+class FirstPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('第一个页面'),
+      ),
+      body: GestureDetector(
+        child: Center(
+          child: Hero(
+            tag: '1',
+            child: Image.network('http://img1d.xgo-img.com.cn/pics/1745/1744799.jpg'),
+          ),
+        ),
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){return SecondPage();}));
+        },
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('第二个页面'),
+      ),
+      body: GestureDetector(
+        child: Center(
+          child: Hero(
+            tag: '2',
+            child: Image.network('http://img1d.xgo-img.com.cn/pics/1768/1767969.jpg'),
+          ),
+        ),
+        onTap: (){
+          Navigator.pop(context);
+        },
       ),
     );
   }
