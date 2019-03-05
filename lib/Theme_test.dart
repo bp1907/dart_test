@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_plugin/flutter_plugin.dart';
 
 void main(){
   runApp(MyApp());
@@ -49,7 +50,7 @@ class MyHomePage extends StatelessWidget{
         //使用copyWith的方式获取accentColor
           data: Theme.of(context).copyWith(accentColor: Colors.grey),
           child: FloatingActionButton(
-            onPressed: (){},
+            onPressed: () {FlutterToast.toast('hi i am plugin', ToastDuration.short);},
             child: Icon(Icons.computer),
           ),
       ),
