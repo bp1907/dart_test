@@ -23,6 +23,8 @@ dependencies:
   path_provider: ^0.4.1
   url_launcher: ^3.0.1
   shared_preferences: ^0.4.2
+  redux: ^3.0.0
+  flutter_redux: ^0.5.2
 
 dev_dependencies:
   flutter_test:
